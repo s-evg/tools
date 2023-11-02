@@ -14,10 +14,9 @@ def declination_days(self, days: int) -> str:
 
 
 def levenstein(self, A: str, B: str) -> int:
-    """Расчёт расстояния Левенштейна (редакционного расстояния"""
+    """Расчёт расстояния Левенштейна (редакционного расстояния)"""
 
-    F = [[i + j if i*j == 0 else 0 for j in range(len(B) + 1)]
-         for i in range(len(A) + 1)]
+    F = [[i + j if i*j == 0 else 0 for j in range(len(B) + 1)] for i in range(len(A) + 1)]
 
     for i in range(1, len(A) + 1):
         for j in range(1, len(B) + 1):
