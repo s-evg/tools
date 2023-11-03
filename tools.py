@@ -37,3 +37,15 @@ def equal(self, A: str, B: str) -> bool:
         if A[i] != B[i]:
             return False
     return True
+
+
+def search_in_array(self, array: list, search_text: str) -> list:
+    """Поиск в массиве"""
+
+    search_array = []
+    search_text = search_text.lower()
+    
+    for find in array:
+        if search_text in find.lower():
+            search_array.append(find)
+    return search_array
