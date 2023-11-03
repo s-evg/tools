@@ -45,7 +45,11 @@ def search_in_array(self, array: list, search_text: str) -> list:
     search_array = []
     search_text = search_text.lower()
     
-    for find in array:
-        if search_text in find.lower():
-            search_array.append(find)
+    if search_text:
+        for find in array:
+            if search_text in find.lower():
+                search_array.append(find)
+    else:
+        search_array = array
+
     return search_array
