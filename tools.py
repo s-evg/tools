@@ -1,4 +1,4 @@
-def declination_days(self, days: int) -> str:
+def declination_days(days: int) -> str:
     """Правильное склонение для слова «день»"""
 
     text_day = ""
@@ -13,7 +13,7 @@ def declination_days(self, days: int) -> str:
     return text_day
 
 
-def levenstein(self, A: str, B: str) -> int:
+def levenstein(A: str, B: str) -> int:
     """Расчёт расстояния Левенштейна (редакционного расстояния)"""
 
     F = [[i + j if i*j == 0 else 0 for j in range(len(B) + 1)] for i in range(len(A) + 1)]
@@ -28,7 +28,7 @@ def levenstein(self, A: str, B: str) -> int:
     return F[len(A)][len(B)]
 
 
-def equal(self, A: str, B: str) -> bool:
+def equal(A: str, B: str) -> bool:
     """Сравнение строк"""
     
     if len(A) != len(B):
@@ -39,7 +39,7 @@ def equal(self, A: str, B: str) -> bool:
     return True
 
 
-def search_in_array(self, array: list, search_text: str) -> list:
+def search_in_array(array: list, search_text: str) -> list:
     """Поиск в массиве"""
 
     search_array = []
@@ -53,3 +53,22 @@ def search_in_array(self, array: list, search_text: str) -> list:
         search_array = array
 
     return search_array
+
+
+def parsing_number(number: int, base_: int = 10) -> int:
+    """Разбор числа"""
+
+    string = ""
+    while number > 0:
+        digit = number % base_
+        number //= base_
+        string += str(digit)
+
+    return int(string)
+
+
+if __name__ == '__main__':
+    A = "колокол"
+    B = "молоко"
+    print(levenstein(A, B))
+
